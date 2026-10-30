@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nandana S Nair — Computer Science and Engineering student specializing in Data Science.">
+<title>Nandana S Nair | Data Science & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#F5F0E8;--paper:#FFFCF7;--ink:#302B27;--muted:#766D64;--line:#E3D9CE;
+ --blue:#A65F46;--blue2:#EADBD0;--orange:#C88969;--lime:#D9C7A3;
+ --dark:#3B332E;--mono:"Space Mono",monospace;--sans:"Space Grotesk",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+a{color:inherit}
+.wrap{width:min(1160px,calc(100% - 52px));margin:auto}
+.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:20}
+.logo{font-weight:700;letter-spacing:-.06em;font-size:21px;text-decoration:none}
+.logo span{color:var(--blue)}
+.nav{display:flex;gap:28px}
+.nav a{font-size:12px;font-weight:600;text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--blue)}
+.menu{display:none;border:0;background:none;font-size:24px}
+.hero{padding:88px 0 65px;display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center;min-height:600px}
+.kicker{font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px}
+.kicker:before{content:"";width:27px;height:2px;background:var(--orange)}
+h1{font-size:clamp(58px,8vw,104px);line-height:.91;letter-spacing:-.085em;margin:26px 0 25px;font-weight:700}
+h1 .outline{color:transparent;-webkit-text-stroke:1.8px var(--blue)}
+.hero-copy{font-size:17px;color:var(--muted);max-width:570px;margin:0 0 28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:20px;padding:13px 18px;text-decoration:none;font-weight:700;font-size:12px;border:1px solid var(--ink);transition:.2s}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:white}
+.btn.secondary{background:transparent}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.hero-note{font:10px var(--mono);color:var(--muted);margin-top:25px}
+.hero-visual{position:relative;min-height:420px;display:grid;place-items:center}
+.visual-card{width:min(410px,100%);height:380px;background:var(--blue);position:relative;overflow:hidden;box-shadow:14px 14px 0 var(--lime)}
+.visual-card:before,.visual-card:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.35);border-radius:50%;width:330px;height:330px;left:50%;top:50%;transform:translate(-50%,-50%)}
+.visual-card:after{width:230px;height:230px}
+.big-n{position:absolute;inset:0;display:grid;place-items:center;color:#FFFCF7;font-size:230px;font-weight:700;letter-spacing:-.15em;line-height:1;opacity:.96}
+.visual-label{position:absolute;bottom:18px;left:18px;background:var(--lime);padding:12px 14px;font:10px var(--mono);color:var(--ink);text-transform:uppercase}
+.corner{position:absolute;width:64px;height:64px;background:var(--orange);right:20px;top:20px;transform:rotate(12deg)}
+.ticker{background:var(--dark);color:white;overflow:hidden;padding:13px 0;font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.ticker-inner{display:flex;justify-content:space-around;gap:25px;flex-wrap:wrap}
+.ticker b{color:var(--lime);font-weight:400}
+.section{padding:94px 0}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.section-index{font:11px var(--mono);color:var(--blue);margin-bottom:13px}
+h2{font-size:clamp(38px,5vw,62px);line-height:.98;letter-spacing:-.07em;margin:0}
+.section-desc{max-width:310px;color:var(--muted);font-size:13px;margin:0}
+.project-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.project{background:var(--paper);border:1px solid var(--line);padding:23px;min-height:270px;display:flex;flex-direction:column;position:relative;transition:.2s}
+.project:hover{transform:translateY(-5px);box-shadow:7px 7px 0 var(--blue2)}
+.project:nth-child(1),.project:nth-child(4){grid-column:span 3}
+.project:nth-child(2),.project:nth-child(3),.project:nth-child(5){grid-column:span 2}
+.project-no{font:11px var(--mono);color:var(--blue);display:flex;justify-content:space-between;margin-bottom:25px}
+.project h3{font-size:23px;line-height:1.08;letter-spacing:-.05em;margin:0 0 12px}
+.project p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tag{font:9px var(--mono);padding:5px 8px;background:var(--blue2);color:#7A4435}
+.metric{margin-top:17px;padding-top:12px;border-top:1px solid var(--line);font:10px var(--mono);color:var(--muted)}
+.metric strong{font-size:18px;color:var(--ink);margin-right:5px}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.about-title{font-size:clamp(42px,5.5vw,68px);line-height:.95;letter-spacing:-.08em}
+.about-title span{color:var(--blue)}
+.about-text{font-size:16px;color:var(--muted);max-width:700px}
+.about-text strong{color:var(--ink)}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:23px;margin-top:32px}
+.skill-box{border-top:2px solid var(--ink);padding-top:12px}
+.skill-box h3{font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em;margin:0 0 12px}
+.skill-chips{display:flex;flex-wrap:wrap;gap:7px}
+.skill-chips span{background:#EEE7DE;padding:7px 10px;font-size:11px}
+.timeline{border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:1fr auto;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.job h3{font-size:17px;margin:0 0 5px}
+.job p{font-size:13px;color:var(--muted);max-width:800px;margin:0}
+.job time{font:10px var(--mono);color:var(--blue);white-space:nowrap}
+.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px}
+.list{margin-top:25px;border-top:1px solid var(--line)}
+.list-item{padding:17px 0;border-bottom:1px solid var(--line)}
+.list-item strong{display:block;font-size:14px}
+.list-item span{font-size:12px;color:var(--muted)}
+.awards{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}
+.award{background:var(--lime);padding:9px 12px;font:10px var(--mono)}
+.contact{background:var(--blue);color:white;padding:42px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;position:relative;overflow:hidden}
+.contact:after{content:"N";position:absolute;right:20%;top:-100px;font-size:370px;font-weight:700;color:rgba(255,255,255,.06);pointer-events:none}
+.contact .section-index{color:var(--lime)}
+.contact h2{max-width:620px}
+.contact p{color:#F1E4D9;font-size:13px;max-width:470px}
+.contact-links{display:flex;gap:20px;margin-top:22px;flex-wrap:wrap}
+.contact-links a{font:11px var(--mono);text-underline-offset:4px}
+.contact-side{z-index:1}
+.mail{display:inline-block;background:var(--lime);color:var(--ink);padding:14px 18px;text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}
+.contact-side div{font:10px var(--mono);margin-top:12px;color:#F1E4D9}
+footer{padding:25px 0 35px;display:flex;justify-content:space-between;color:var(--muted);font:10px var(--mono)}
+@media(max-width:850px){
+ .hero{grid-template-columns:1fr;padding:65px 0;gap:25px}.hero-visual{min-height:350px}.visual-card{height:320px;width:350px;max-width:100%}
+ .about{grid-template-columns:1fr;gap:30px}.project-grid{grid-template-columns:repeat(2,1fr)}
+ .project:nth-child(n){grid-column:span 1}.project:first-child,.project:last-child{grid-column:span 2}
+ .section-top{align-items:start;flex-direction:column}.section-desc{max-width:500px}
+}
+@media(max-width:560px){
+ .wrap{width:calc(100% - 34px)}.topbar{height:66px}.menu{display:block}
+ .nav{display:none;position:absolute;top:66px;left:0;right:0;background:var(--bg);padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column;gap:18px}
+ .nav.open{display:flex}.hero{padding:55px 0 48px;min-height:auto}h1{font-size:61px}
+ .hero-copy{font-size:15px}.hero-visual{min-height:300px}.visual-card{height:285px;width:300px}.big-n{font-size:180px}
+ .ticker-inner{justify-content:flex-start;padding:0 18px}.section{padding:72px 0}
+ .project-grid{grid-template-columns:1fr}.project:nth-child(n){grid-column:span 1;min-height:235px}
+ .skills,.lower-grid{grid-template-columns:1fr;gap:22px}.job{grid-template-columns:1fr;gap:8px}.job time{white-space:normal}
+ .contact{grid-template-columns:1fr;padding:28px 23px}.contact:after{right:-15%;font-size:260px}
+ footer{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+<header class="topbar wrap">
+ <a class="logo" href="#home">NANDANA<span>®</span></a>
+ <button class="menu" aria-label="Open navigation" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+ <nav class="nav">
+  <a href="#projects">WORK</a><a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#education">EDUCATION</a><a href="#contact">CONTACT ↗</a>
+ </nav>
+</header>
+
+<main>
+<section class="hero wrap" id="home">
+ <div>
+  <div class="kicker">Computer Science · Data Science</div>
+  <h1>Ideas into<br><span class="outline">intelligent</span><br>systems.</h1>
+  <p class="hero-copy">I’m Nandana S Nair, a Computer Science and Engineering student specializing in Data Science. I build practical applications using machine learning, AI and software development.</p>
+  <div class="ctas"><a class="btn primary" href="#projects">VIEW MY WORK ↘</a><a class="btn secondary" href="mailto:nandanasnair014@gmail.com">LET’S CONNECT ↗</a></div>
+  <div class="hero-note">B.TECH CSE (DATA SCIENCE) · MACE · CLASS OF 2027</div>
+ </div>
+ <div class="hero-visual" aria-label="Abstract geometric N monogram">
+  <div class="visual-card"><div class="corner"></div><div class="big-n">N.</div><div class="visual-label">DATA / LOGIC / IMPACT</div></div>
+ </div>
+</section>
+
+<div class="ticker"><div class="ticker-inner"><span><b>01</b> PYTHON</span><span><b>02</b> MACHINE LEARNING</span><span><b>03</b> AI APPLICATIONS</span><span><b>04</b> DATA ANALYSIS</span><span><b>05</b> SOFTWARE DEVELOPMENT</span></div></div>
+
+<section class="section wrap" id="projects">
+ <div class="section-top"><div><div class="section-index">01 — SELECTED WORK</div><h2>Projects with<br>a purpose.</h2></div><p class="section-desc">From intelligent models to full-stack applications, these projects reflect my interest in turning technical ideas into useful tools.</p></div>
+ <div class="project-grid">
+  <article class="project"><div class="project-no"><span>PROJECT / 01</span><span>↗</span></div><h3>Expense Auditor</h3><p>Corporate expense compliance platform using receipt extraction through Groq Vision and a deterministic TypeScript rule engine to evaluate claims against policy.</p><div class="tags"><span class="tag">NEXT.JS</span><span class="tag">GROQ VISION</span><span class="tag">TYPESCRIPT</span></div><div class="metric"><strong>~95%+</strong> OCR extraction accuracy · 100% audit consistency</div></article>
+
+  <article class="project"><div class="project-no"><span>PROJECT / 02</span><span>↗</span></div><h3>WaveGuard</h3><p>Wave prediction system integrating an XGBoost model with ESP32 buoy hardware and a real-time dashboard.</p><div class="tags"><span class="tag">XGBOOST</span><span class="tag">ESP32</span><span class="tag">DASHBOARD</span></div><div class="metric"><strong>TOP 8</strong> .Hack finalist</div></article>
+
+  <article class="project"><div class="project-no"><span>PROJECT / 03</span><span>↗</span></div><h3>EEG-Based Clinical Decision Support</h3><p>Explainable ensemble learning system for Alzheimer’s and depression classification using EEG data.</p><div class="tags"><span class="tag">EEG</span><span class="tag">ENSEMBLE ML</span><span class="tag">STREAMLIT</span></div><div class="metric"><strong>74.30%</strong> Alzheimer’s · <strong>69.49%</strong> depression accuracy</div></article>
+
+  <article class="project"><div class="project-no"><span>PROJECT / 04</span><span>↗</span></div><h3>Eventify — Event Management</h3><p>Full-stack event management platform with session-based authentication, role-based access and separate dashboards for organizers and service providers. Relational SQL design supports bookings, sponsorships and data integrity.</p><div class="tags"><span class="tag">FLASK</span><span class="tag">MYSQL</span><span class="tag">SQL</span></div><div class="metric"><strong>FULL-STACK</strong> Web application</div></article>
+
+  <article class="project"><div class="project-no"><span>PROJECT / 05</span><span>↗</span></div><h3>Credit Card Fraud Detection</h3><p>Fraud detection using Decision Tree classification and Apriori association mining to identify patterns linked to fraudulent transactions.</p><div class="tags"><span class="tag">DECISION TREE</span><span class="tag">APRIORI</span><span class="tag">FLASK</span></div><div class="metric"><strong>HYBRID</strong> Classification + pattern mining</div></article>
+ </div>
+</section>
+
+<section class="section wrap" id="about">
+ <div class="about">
+  <div><div class="section-index">02 — ABOUT ME</div><div class="about-title">Curious by<br>nature.<br><span>Practical</span><br>by design.</div></div>
+  <div><p class="about-text"><strong>I’m pursuing a B.Tech in Computer Science & Engineering (Data Science)</strong> at Mar Athanasius College of Engineering under APJ Abdul Kalam Technological University, with a CGPA of 9.0/10.</p><p class="about-text">My foundation spans data structures and algorithms, database management systems, operating systems, computer networks, probability, data analytics and big data. I enjoy developing AI, machine learning and full-stack applications while continuously strengthening my technical and problem-solving skills.</p>
+   <div class="skills">
+    <div class="skill-box"><h3>Programming languages</h3><div class="skill-chips"><span>Python</span><span>Java</span><span>C</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>HTML</span><span>CSS</span></div></div>
+    <div class="skill-box"><h3>Frameworks & libraries</h3><div class="skill-chips"><span>Flask</span><span>Streamlit</span><span>Next.js</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div></div>
+    <div class="skill-box"><h3>Data science</h3><div class="skill-chips"><span>EDA</span><span>Data preprocessing</span><span>Feature engineering</span><span>Model building</span><span>Model evaluation</span></div></div>
+    <div class="skill-box"><h3>Databases & tools</h3><div class="skill-chips"><span>MySQL</span><span>Relational DB design</span><span>Git</span><span>GitHub</span><span>Power BI</span><span>Excel</span></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section wrap" id="experience">
+ <div class="section-top"><div><div class="section-index">03 — EXPERIENCE</div><h2>Learning in<br>the real world.</h2></div><p class="section-desc">Practical experience applying data science methods to real-world datasets and model workflows.</p></div>
+ <div class="timeline">
+  <div class="job"><div><h3>Data Science Intern · Keltorn</h3><p>Worked on classification and regression problems using real-world datasets. Performed data cleaning, preprocessing and feature preparation; applied supervised machine learning algorithms with Python and Scikit-learn, evaluated model performance and gained hands-on exposure to Power BI.</p></div><time>JUNE 2025 · 2 WEEKS</time></div>
+ </div>
+</section>
+
+<section class="section wrap" id="education">
+ <div class="lower-grid">
+  <div><div class="section-index">04 — EDUCATION</div><h2>Academic<br>foundation.</h2><div class="list">
+   <div class="list-item"><strong>Mar Athanasius College of Engineering</strong><span>B.Tech, Computer Science & Engineering (Data Science)<br>Expected 2027 · CGPA 9.0/10</span></div>
+   <div class="list-item"><strong>Vimalagiri Public School, Kothamangalam</strong><span>Class XII · Bio-Maths (CBSE) · 93.2% · 2023</span></div>
+   <div class="list-item"><strong>Canadian Central School, Puthuppady</strong><span>Class X (CBSE) · 94.6% · 2021</span></div>
+  </div></div>
+  <div><div class="section-index">05 — LEADERSHIP</div><h2>Beyond the<br>classroom.</h2><div class="list">
+   <div class="list-item"><strong>Vice Chair · ISTE MACE</strong><span>2025–26 · Overseeing club operations, events and collaborations</span></div>
+   <div class="list-item"><strong>Women in Tech Lead · TinkerHub MACE</strong><span>2025–26 · Leading initiatives supporting women in tech</span></div>
+   <div class="list-item"><strong>Membership Development Committee · IEEE MACE</strong><span>2025–26 · Membership drives and outreach</span></div>
+   <div class="list-item"><strong>Program Committee Lead · ISTE MACE</strong><span>2024–25 · Led workshops and technical events</span></div>
+  </div></div>
+ </div>
+ <div style="margin-top:48px"><div class="section-index">RECOGNITION & PARTICIPATION</div><div class="awards"><span class="award">NPTEL ELITE — JOY OF COMPUTING USING PYTHON</span><span class="award">TOP 8 FINALIST — .HACK</span><span class="award">TINKERHACK PARTICIPANT</span><span class="award">IEEE XTREME PARTICIPANT</span></div></div>
+</section>
+
+<section class="section wrap" id="contact" style="padding-top:20px">
+ <div class="contact"><div><div class="section-index">06 — CONTACT</div><h2>Let’s build<br>something useful.</h2><p>Interested in data science, AI projects, software development or opportunities to collaborate? Get in touch.</p><div class="contact-links"><a href="https://github.com/Nandanas1409" target="_blank" rel="noopener">GITHUB ↗</a><a href="https://www.linkedin.com/in/nandana-s-nair-b17728353" target="_blank" rel="noopener">LINKEDIN ↗</a></div></div>
+  <div class="contact-side"><a class="mail" href="mailto:nandanasnair014@gmail.com">EMAIL ME ↗</a><div>nandanasnair014@gmail.com<br>8943724024<br>Cheruvattoor, Kothamangalam</div></div>
+ </div>
+</section>
+</main>
+<footer class="wrap"><span>© 2026 NANDANA S NAIR</span><span>DESIGNED & BUILT WITH HTML + CSS</span><a href="#home" style="text-decoration:none">BACK TO TOP ↑</a></footer>
+<script>
+document.querySelectorAll('.nav a').forEach(link=>link.addEventListener('click',()=>document.querySelector('.nav').classList.remove('open')));
+</script>
+</body>
+</html>
